@@ -1,0 +1,24 @@
+<div>
+<div style="border: solid; margin: auto; width: 400px; text-align: center;">
+  <h1>Formulario de contacto</h1>
+    <section style="display: flex;"><p class="p">Nombre: </p><input type="text" [(ngModel)]="nombre"></section>
+    <section style="display: flex;" >
+      <div class="p"></div>  <p *ngIf="nombre == ''" class="error-msn">Introduzca Nombre y Apellido valido</p>
+    </section>
+    <section style="display: flex;"><p class="p">Email: </p><input type="email" [(ngModel)]="email" ></section>
+    <section style="display: flex;">
+      <div class="p"></div> <p *ngIf="email == ''" class="error-msn">Introduzca un Email valido</p>
+    </section>
+    <section style="display: flex;"><p class="p">Mensaje: </p><input type="text" [(ngModel)]="mensaje"></section>
+    <section style="display: flex;">
+      <div class="p"></div> <p *ngIf="mensaje == ''" class="error-msn">Introduzca un Mensaje</p>
+    </section>
+    <section style="display: flex;"><p class="p">{{a}} + {{b}}</p><input type="text" [(ngModel)]="spam"></section>
+    <section style="display: flex;">
+      <div class="p"></div> <p *ngIf="spam != resultSpam" class="error-msn">Validacion anti-Spam</p>
+    </section>
+    <button (click)="send()">Enviar</button>
+</div>
+</div>
+<app-info-form  [valor]="msn"></app-info-form>
+<router-outlet></router-outlet>
